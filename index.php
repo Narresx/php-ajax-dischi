@@ -20,7 +20,6 @@ include './data/data.php';
     <title>Dischi PHP</title>
 </head>
 <body>
-<h1 class="text-center">Dischi con solo PHP</h1>
 <section class="container-fluid d-flex flex-wrap justify-content-center m-auto background-section">
      <?php foreach($database as $disk) {?>
            
