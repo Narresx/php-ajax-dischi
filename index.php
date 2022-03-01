@@ -1,5 +1,5 @@
 <?php 
-include './data/data.php'
+include './data/data.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,16 +16,23 @@ include './data/data.php'
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.cjs.js" 
     integrity="sha512-2e2aXOh4/FgkCAUyurkjk0Uw4m1gPcExFwb1Ai4Ajjg97se/FEWfrLG1na4mq8cgOzouc8qLIqsh0EGksPGdqQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./css/style.css">
     <title>Dischi PHP</title>
 </head>
 <body>
-<section class="container m-auto">
+<section class="container-fluid d-flex flex-wrap justify-content-center m-auto background-section">
      <?php foreach($database as $disk) {?>
            
-        <h2><?php echo $disk['title']?></h2>
-        <p><?php echo $disk['author']?></p>
+    <div class="card h-75 p-4 m-2 background-card" style="width: 18rem;">
+     <img src="<?php echo $disk['poster']?>" class="card-img-top">
+        <div class="card-body">
+            <h2 class="card-title text-white text-center"><?php echo $disk['title']?></h2>
+            <h4 class="card-text text-center text-muted"><?php echo $disk['author']?></h4>
+            <h4 class="card-text text-center text-muted"><?php echo $disk['year']?></h4>
+        </div>
+    </div>
 
      <?php } ?>
-    </section>
+</section>
 </body>
 </html>
