@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0/vue.cjs.js"
-        integrity="sha512-WEjd7hnlSyXg/M6RtqmPMg8p/YPNg1vMEXCRboZ8eOucCrp7hc3u/fHjKLXCXVfDT/cVv93N4Fq27Ce4F3rBcw=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.common.dev.min.js"
+        integrity="sha512-TpgbLHXaTCAZ7ULhjopb1PveTz5Jx6KEQUtMfXhV0m0EArh+6O8ybZjjDN1Yug6oagN6iFm6EoMjuYSiFr0qXQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
         integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
@@ -17,7 +17,22 @@
 
 <body>
     <div id="root">
-
+        <div class="container-fluid d-flex flex-wrap justify-content-center m-auto background-section">
+            <div v-for="(disk, index) in disks" :key="index" class="card background-card" style="width: 18rem;">
+                <img :src="disk.poster" class="card-img-top">
+                <div class="card-body">
+                    <h2 class="text-white p-2">
+                        {{ disk.title }}
+                    </h2>
+                    <div class="text-muted text-center">
+                        {{ disk.author }}
+                    </div>
+                    <div class="text-muted text-center">
+                        {{ disk.year }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
